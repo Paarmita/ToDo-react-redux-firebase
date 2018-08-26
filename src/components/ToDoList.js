@@ -1,10 +1,11 @@
-
-import React, { Component } from 'react';
+import React from 'react';
 import ToDoListItem from './ToDoListItem';
+import { connect } from "react-redux";
+import * as actions from "../actions";
 import './ToDoList.css';
 
 
-class ToDoList extends Component {
+class ToDoList extends React.Component {
   state = {
     addFormVisible: false,
     addFormValue: ""
@@ -21,8 +22,9 @@ class ToDoList extends Component {
   renderAddForm = () => {
     if (this.state.addFormVisible) {
       return (
-        <div className="col s12">
+        <div className="col-sm-12">
           <form onSubmit={this.handleFormSubmit}>
+
             <div className="input-field">
               <i className="material-icons prefix">note_add</i>
               <input
@@ -32,6 +34,7 @@ class ToDoList extends Component {
               />
               <label for="toDoNext">What To Do Next</label>
             </div>
+
           </form>
         </div>
       );
@@ -39,22 +42,20 @@ class ToDoList extends Component {
   };
 
 render() {
-    const { addFormVisible } = this.state;
-     return (
-      <div className="to-do-list-container">
+  const { addFormVisible } = this.state;
+
+
+    return (
+      <div className="container">
         <div className="row">
           {this.renderAddForm()}
           <ToDoListItem />
         </div>
-        <div className="fixed-action-btn">
+        <div className="container">
           <button
             onClick={() => this.setState({ addFormVisible: !addFormVisible })}
-            className="btn-floating btn-large teal darken-2">
-            {addFormVisible ? (
-              <i className="large material-icons">close</i>
-            ) : (
-              <i className="large material-icons">add</i>
-            )}
+            className="btn btn-default">
+            {addFormVisible ? (<i className="large material-icons">close</i>) : (<i className="large material-icons">add</i>)}
           </button>
         </div>
       </div>
@@ -62,5 +63,10 @@ render() {
   }
 }
 
+const mapStateToProps = ({ data }) => {
+  return {
+    data
+  };
+};
 
 export default ToDoList;
