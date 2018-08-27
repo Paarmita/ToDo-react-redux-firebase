@@ -1,5 +1,6 @@
 import { todosRef } from '../config/firebase';
-import { FETCH_TODOS } from './types';
+// import {CONST} from '../constants/constants';
+import { FETCH_TODOS } from "./types";
 
 export const addToDo = newToDo => async dispatch => {
   todosRef.push().set(newToDo);
@@ -17,3 +18,9 @@ export const fetchToDos = () => async dispatch => {
     });
   });
 };
+
+
+
+// All actions then call dispatch method which takes one argument which is object with type and payload. 
+// Type represents action type so the reducer know if it should handle the action. 
+// And payload represents actual data.
