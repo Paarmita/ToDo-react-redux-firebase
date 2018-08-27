@@ -23,3 +23,7 @@ Simple ToDo-app using react-redux-firebase
 npm start
 ```
 * Server will start at http://localhost:3000
+
+![](https://github.com/Paarmita/ToDo-react-redux-firebase/blob/master/Screenshots/ToDo.png)
+
+![](https://github.com/Paarmita/ToDo-react-redux-firebase/blob/master/Screenshots/firebase.png)
