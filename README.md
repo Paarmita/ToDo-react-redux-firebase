@@ -15,15 +15,23 @@ Simple ToDo-app using react-redux-firebase
   npm install
 ```
 * Add dev.js file in /src/config to setup firebase
+```
+  export const FirebaseConfig = {
+  	apiKey: "<Web API Key>",
+  	authDomain: "<Project ID>.firebaseapp.com",
+  	databaseURL: "<Database url>"
+  };
+```
 
 ![](https://github.com/Paarmita/ToDo-react-redux-firebase/blob/master/Screenshots/dev.js.png)
 
 * Now start server
 ```
-npm start
+  npm start
 ```
 * Server will start at http://localhost:3000
 
 ![](https://github.com/Paarmita/ToDo-react-redux-firebase/blob/master/Screenshots/ToDo.png)
 
 ![](https://github.com/Paarmita/ToDo-react-redux-firebase/blob/master/Screenshots/firebase.png)
+
