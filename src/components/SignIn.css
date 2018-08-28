@@ -1,6 +1,6 @@
 .social-signin {
   padding: 20px 40px 20px 40px;
-  font-size: 26px;
+  font-size: 20px;
   border-radius: 100px;
   text-align: center;
   text-decoration: none;
@@ -9,12 +9,21 @@
   transition: opacity 0.5s;
 }
  .social-signin-container {
-  margin-top: 30%;
+  margin-top: 15%;
 }
  .social-signin:hover {
-  opacity: 0.9;
   text-decoration: none;
+  color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
  .social-signin-icon {
   padding-right: 15px;
+}
+
+#sign-in {
+  margin-bottom: -20px;
+}
+ #sign-in-header {
+  margin-bottom: 40px;
+  margin-top: 40px;
 }

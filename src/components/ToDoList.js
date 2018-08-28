@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import _ from 'lodash';
 import './ToDoList.css';
+import Preloader from './Preloader';
 import nothing from '../img/nothing_found.png';
 
 class ToDoList extends React.Component {
@@ -74,6 +75,19 @@ renderToDos() {
 
   render() {
     const { addFormVisible } = this.state;
+
+
+    if (this.props.data === "loading") {
+      return (
+        <div className="row center-align">
+          <div className="col s4 offset-s4">
+            <Preloader />
+          </div>
+        </div>
+      );
+    }
+
+    
     return (
       <div className="to-do-list-container">
         <div className="row">
