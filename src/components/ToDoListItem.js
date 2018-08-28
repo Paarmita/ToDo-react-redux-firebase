@@ -7,8 +7,8 @@ class ToDoListItem extends React.Component {
 
 
   handleCompleteClick = completeToDoId => {
-    const { completeToDo } = this.props;
-    completeToDo(completeToDoId);
+    const { completeToDo, auth } = this.props;
+    completeToDo(completeToDoId, auth.uid);
   };
 
 render() {
@@ -30,6 +30,12 @@ render() {
   }
 }
 
-export default connect(null, { completeToDo })(ToDoListItem);
+const mapStateToProps = ({ auth }) => {
+  return {
+    auth
+  };
+};
+ export default connect(mapStateToProps, { completeToDo })(ToDoListItem);
 
+ 
 //to connect action to components use connect

@@ -19,9 +19,9 @@ class ToDoList extends React.Component {
 
   handleFormSubmit = event => {
     const { addFormValue } = this.state;
-    const { addToDo } = this.props;
+    const { addToDo, auth } = this.props;
     event.preventDefault();
-    addToDo({ title: addFormValue });
+    addToDo({ title: addFormValue }, auth.uid);
     this.setState({ addFormValue: "" });
   };
 
@@ -70,7 +70,8 @@ renderToDos() {
   }
 
   componentWillMount() {
-    this.props.fetchToDos();
+    const { auth } = this.props;
+    this.props.fetchToDos(auth.id);
   }
 
   render() {
@@ -87,7 +88,7 @@ renderToDos() {
       );
     }
 
-    
+
     return (
       <div className="to-do-list-container">
         <div className="row">
@@ -119,9 +120,10 @@ renderToDos() {
 }
 
 
-const mapStateToProps = ({ data }) => {
+const mapStateToProps = ({ data, auth }) => {
   return {
-    data
+    data,
+    auth
   };
 };
 
