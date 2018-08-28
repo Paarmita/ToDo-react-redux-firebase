@@ -71,7 +71,7 @@ renderToDos() {
 
   componentWillMount() {
     const { auth } = this.props;
-    this.props.fetchToDos(auth.id);
+    this.props.fetchToDos(auth.uid);
   }
 
   render() {

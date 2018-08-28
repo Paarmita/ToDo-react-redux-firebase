@@ -17,7 +17,7 @@ export const completeToDo = (completeToDoId, uid) => async dispatch => {
     .remove();
 };
 
-export const fetchToDos = () => async dispatch => {
+export const fetchToDos = uid => async dispatch => {
   todosRef.child(uid).on("value", snapshot => {
     dispatch({
       type: FETCH_TODOS,

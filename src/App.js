@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ToDoList from './components/ToDoList';
 import SignIn from './components/SignIn';
+import requireAuth from "./components/auth/requireAuth";
 import { BrowserRouter, Route } from "react-router-dom";
 import { connect } from 'react-redux';
 import { fetchUser } from './actions';
