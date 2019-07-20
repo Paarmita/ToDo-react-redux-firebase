@@ -1,4 +1,7 @@
 # ToDo-react-redux-firebase
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/Paarmita/ToDo-react-redux-firebase.svg)](https://greenkeeper.io/)
+
 Simple ToDo-app using react-redux-firebase
 
 ### Installation
